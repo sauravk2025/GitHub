@@ -1,0 +1,106 @@
+GIT
+
+version control system
+help to track changes in code
+
+free ,open source ,fast,track history,collab,
+
+-----------------------------
+
+GIITHUB
+
+website that allows developers to store and manage their code using Git
+
+folder - repository
+
+ repositories ->new->repo-name->description->create
+
+
+------------------------
+
+open GITBASH/ VS CODE TERMINAL
+
+local - any particular project
+global - change from 1 single account
+
+GIT CONFIG
+
+adding user name
+git config --global user.name "sauravk2025"
+
+add email
+
+ git config --global user.email "sauravsalvi.77@gmail.com"
+
+to know all changes made
+git config --list
+
+----------
+CLONE
+
+local - laptop /pc
+remote - folders in github
+
+clone - copy git repo to our laptop
+
+to get link -> click on code ->http link copy
+goto terminal 
+
+git clone https://github.com/sauravk2025/Demo-Github.git
+
+change directory to that folder which is imported
+cd dirname
+ls list all files
+ls -a - to view hidden files
+----------------------------
+
+STATUS
+git status
+//uptodate 
+
+	
+4 STATUS
+untracked - files which is not in github(when we add new file)
+modified - files which we imported from git and is modified
+staged - file which is ready to commit(after adding)
+un modified - unchanged file
+
+--------------------------
+
+WHEN WE MODIFY A FILE (M) is displayed on the file
+
+whenever we  modify a file it is a 2 step process
+we need to add and then commit
+
+-------------------------
+
+ADD
+
+git add filename
+
+ git add index.html
+ git add README.md
+ git add .  - to add all files in the working directory
+ 
+---------------------
+
+COMMIT
+
+git commit -m "add new feauture"
+ git commit -m "Add new h1"
+
+-------------------------
+
+TO REFLECT CHANGES IN GITHUB (local ->remote)
+
+git push 
+
+git push origin main
+
+origin - name of remote repo
+main - name of branch
+------------------------------
+git init -y. When you run this command, Git creates a new directory for your project
+
+
+

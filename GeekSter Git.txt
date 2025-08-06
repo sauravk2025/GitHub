@@ -1,0 +1,277 @@
+Git - Version Control-tools that help it teams manage changes in source code
+
+Y git
+-When we work on a project its helps us to work together
+-Reduce code conflicts
+-And we can have real time code communication
+-If i need a code and someone already did that i can pull that code using git
+-It also have the backup code
+- when we change the code and if there was any error we can get the backup in git 
+
+Command Line
+Command Line is important since you want to interact with server. We use Graphical Interface since our monitor has close button ,mouse etc. But servers does not have monitor .They are just for storing. So we need command line .
+
+Command Line
+-echo hello world - to print("hello world)
+-cd .  - current directory
+-Dir   - list of all directory
+-cd Directory  - change directory
+-cd ..  -  go back to before directory
+-cd ../../ - jump directory
+-mkdir Directoryname - Create Director
+-mkdir d1 d2 - create new directory(space means 2 folder)
+-mkdir "new folder" - create directory new folder
+-help - for help
+-notepad Filename - Create a new file
+-cls - clear screen
+-history - to view all commands you have executed 
+	 - or use up/down arrow
+-del FileName - delete file
+rmdir Directoryname - remove directory
+
+
+
+SettingUp
+
+Configuring my name and email to ensure that any file uploaded from this machine will be mine
+
+git config --global user.name "SauravK"
+git config --global user.email "sauravsalvi.77@gmail.com"
+
+Repository is a folder where we put our source code
+
+Usually for our code we have 2 copies. One is in the system(local) and on is in the cloud or GitHub.(remote)
+We make sure the code is working and we push it in the GitHub
+
+Creating a git repository in gitbash
+
+$ mkdir test_geekster
+
+$ cd test_geekster
+
+$ git init (test_geekster) - this is a folder git will track. That is it can store backup and when commit it can make changes etc.
+
+$ git status - it prints something indicating it is monitoring.This command tell the status of repositoy
+
+
+GitBash uses Linux Commands
+
+rmfilename - remove filename 
+nano filename.txt  - to create a file or write to existing
+		-cntrl+s - save
+		-cntrl+x - exit
+cat filename - read a file
+
+when we type git status it displayed untracked file.That is new file is added to git which is not tracked .To track them we use.
+We need to add that file to staging area.
+
+$ git add test.txt
+
+Staging area 
+When we work on a big project with 100 files and if i edit only 5 files. We add them to staging area where we are preparing for commit. Commit is like a checkpoint similar to checkpoints in Game. In the next checkpoint we get this file
+
+to add multiple files in staging area
+$ git add test.txt test2.txt
+
+to add all files in directory
+$ git add .
+
+to unstage files all files
+$ git reset
+
+to unstage only 1 file
+$ git rm --cached test.txt
+
+to commit
+$ $ git commit -m "Initail Commit"
+ m is the flag for adding a small message 
+
+to find details of commit-author and date
+git log
+
+to quit from log - enter 'q'
+
+
+Whenever we make changes in files we need to stage and then commit
+
+to see what changes were made to files
+the new line added will be in green color
+the line deleted will be in red color
+
+$git diff test.txt
+
+
+There are files which want git not to track
+we create file gitignore file .Inside this we specify files which git ignores.
+
+eg:node modules, api keys , environment files
+
+In Linux any folder that starts with . is hidden
+
+$ nano .gitignore
+specify filenames line by line inside this file
+$git add .gitignore
+to display files
+$ls
+$ls -al - to display all hidden files as well
+
+
+
+Branching
+when we work on a project and when we want to updates certain feauters or fix bugs without affecting the main code base we create a branch of main code base and work in it.If it is successful we merge it with main code base.
+
+
+We have a main branch and we create a new_feauture branch to add a new_feauture to existing code in main branch
+suppose you're on the main branch and you want to start working on a new feature:
+$git checkout -b new-feature
+This command creates a new branch called new-feature that points to the same commit as main and checks it out, so you can start working on it.
+
+Add and commit it to new_feauture branch
+
+The main branch remains unaffected by the changes you made in the new-feature branch.
+
+switch to main branch
+
+Once you're satisfied with the changes in the new-feature branch, you can merge them back into main:
+$git merge new-feature
+
+
+Branch is like a copy
+initially we will be in main_branch
+
+
+create a new branch
+$git branch new_branch
+$git branch -a - list all branch
+
+switching to new branch
+$git switch new_branch
+
+
+to create a new branch and switch to it
+$git checkout -b another_branch
+
+it switches to a new branch called another_branch
+
+
+so we will have a copy of all the codes in main branch to our new branch. we work in this branch and merge it with master branch
+
+
+
+GitHub - it is a website where we can upload our repository
+
+we connect our local repo(in system) to remote repo(in github) by remote command
+
+$ git remote add origin https://github.com/sauravk2025/Demo-Github.git
+
+origin is the branch in GitHub. we need to connect our local branch 'master' to the branch named 'origin' in GitHub.
+
+An upstream branch is essentially a reference to the branch in the remote repository that your local branch will push to and pull from by default.
+
+her upstream branch is origin
+
+$  git push --set-upstream origin master
+
+The current branch master has no upstream branch. Your local branch master is not yet linked to any branch in the remote repository (origin).
+
+now we need to push our local branch 'master' to remote branch 'origin' 
+$ git push origin master
+is used to push the commits on your local master branch to the master branch of the origin remote repository
+
+if we make any changes in GitHub .To get that change in local we pull that branch
+
+$ git pull origin master
+
+
+when we want to work on some already existing code which is already exisiting we create a clone of it
+
+$ git clone https://github.com/sauravk2025/Demo-Github.git
+
+it will create a new folder with the name of repository
+
+cd Demo-GitHub
+
+to delete a branch in local
+// we cannot delete current branch
+$ git branch -D new_branch
+
+D - is for force delete
+
+to delete a branch in remote
+$ git push origin --delete master
+
+
+FORKING
+ "forking" refers to creating a personal copy of someone else's repository on your own GitHub account. It allows you to experiment with changes to the codebase without affecting the original project.
+
+
+TO MAKE CHANGES IN EXISTING CODE BASE
+1) FORKING IT OUR GITHUB
+2) CLONING IT TO LOCAL
+3)PUSHING TO GITHUB
+4)PULLING TO ORIGINAL GITHUB REPO FROM WHERE WE FORKED
+
+4) After pushing your changes, go to your forked repository on GitHub.
+
+GitHub will usually detect that you've pushed changes and suggest creating a pull request.
+
+Click on "Compare & pull request."
+
+Add a title and description for your pull request, explaining what changes you've made.
+
+Click "Create pull request."
+
+Renaming files
+
+$git mv originalfilename newfilename
+
+$ git mv test.txt test1.txt
+
+
+$git add test1.txt and commit and push
+
+
+ADDING READ ME FILE
+README FILES ARE HTML CHANGES
+README.md
+MD - MARKDOWN
+
+HEADING
+# Demo-GitHub - HEADING
+## SUB-HEADING
+### - SUB-SUB-HEADING
+#### - SUB-SUB-SUB-HEADING
+#####- SUB-SUB-SUB-HEADING
+###### - SUB-SUB-SUB-SUB-HEADING
+
+PARAGRAPH
+simply type
+
+ITALICS
+*Hi*
+
+BOLD
+**Hi**
+
+LINE 
+---
+
+LINK
+Youtube(https://www.youtube.com)
+
+LIST
+-item1
+-item2
+	-item 2.1
+	-item 2.2
+3.item3
+4.item4
+
+My first Git Repository
+<br>
+Name :
+<b>Saurav Krishnan</b>
+
+
+
+
